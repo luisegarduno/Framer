@@ -1,6 +1,6 @@
-# [Frontend Project] Digital Flipbook Player
+# Digital Flipbook Player
 
-## Please read this before starting the Digital Flipbook Player project
+## Description
 
 This is a mach Frontend interview assignment. It is meant to display the following:
 - General knowledge of browsers and the web platform
