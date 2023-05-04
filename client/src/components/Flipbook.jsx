@@ -47,7 +47,7 @@ export class Flipbook extends React.Component {
         return (
         <div className="video">
             <main>
-                <img id="flipbook" src={this.state.imgList[this.state.index]} alt="Flipbook"/><br/>
+                <img id="flipbook" src={require("./videoFrames/001.jpg")} alt="Flipbook"/><br/>
                 <button onClick={this.onClickBackward}>Previous</button>
                 <button onClick={this.onClickForward}>Next</button>
             </main>
