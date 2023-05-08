@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { VideoRepo } from '../../API/VideoRepo';
 import  requestFramePath from './requestFramePath';
 
 import "./flipbook.css";
@@ -10,7 +9,6 @@ const tempArray = ["001.jpg", "002.jpg", "003.jpg", "004.jpg", "005.jpg", "006.j
 
 export default function Flipbook({ videoFolderUrl }) {
     const [img, setImg] = React.useState();
-    const videoRepo = new VideoRepo(videoFolderUrl);
 
     //VideoRepo(videoFolderUrl).getVideo()
 
