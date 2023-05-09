@@ -34,7 +34,7 @@ The flipbook player must have the following core features:
 - May use external libraries and packages as long as they do not make meeting the project requirements trivial. major pieces of logic and styling are custom. (For example, it may use the Bootstrap CSS framework but some custom styling with stylesheets should be present)
 - The project must be be installable and runnable from the command line without any additional software required beyond NodeJS and Yarn.
 
-### How the projet is evaluated
+### How the project is evaluated
 
 This project is designed to reflect the day-to-day work a frontend software engineer may do. As such, considering the user experience, the overall functionality, and the readability of code are important criteria.
 
