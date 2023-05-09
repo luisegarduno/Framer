@@ -3,10 +3,16 @@
 
   Feel free to edit/remove existing styles in this file.
 */
+@font-face {
+  font-family: "orange-juice";
+  src: url(./fonts/Smile\ Kids.ttf);
+}
 
 .app {
   text-align: center;
-  background-color: #282c34;
+  background-image: url("./StyleImages/slateBackgroundTile.jpg"); /* Photo by František G. on Unsplash */
+  background-size: cover;
+  background-position: center center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,6 +20,14 @@
   justify-content: center;
   color: white;
   font-size: rem;
+  font: helvetica;
+}
+
+.flipbook {
+  max-height: 80%;
+  min-height: 50%;
+  max-width: 80%;
+  min-width: 50%;
 }
 
 .appHeader {
