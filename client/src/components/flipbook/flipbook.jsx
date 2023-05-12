@@ -1,18 +1,14 @@
 import * as React from 'react';
 import "./flipbook.css";
 
-const host = "http://localhost:3001/";
-const tempArray = ["001.jpg", "002.jpg", "003.jpg", "004.jpg", "005.jpg", "006.jpg", "007.jpg", "008.jpg", "009.jpg", "010.jpg"]; //temp replicate of api output
-
 export default function Flipbook({ videoFolderUrl }) {
     const [img, setImg] = React.useState();
     let currentFrameNum = 0;
     const fps = 30;
+    const numFrames = 600;
 
-    //VideoRepo(videoFolderUrl).getVideo()
-
-    async function fetchFrame(frameName = 0){                       //fetches frame from server from path
-        const frame = await fetch(videoFolderUrl + frameName);      
+    async function fetchFrame(framePath = 0){                       //fetches frame from server from path
+        const frame = await fetch(framePath);      
         const imageBlob = await frame.blob();                       //converts frame to blob
         const imageObjectURL = URL.createObjectURL(imageBlob);      //creates url for blob
         setImg(imageObjectURL);
@@ -21,12 +17,13 @@ export default function Flipbook({ videoFolderUrl }) {
     React.useEffect(() => {
         //create interval to fetch next frame every 1/fps seconds
         setInterval(() => {
-            if(currentFrameNum >= tempArray.length - 1){        //if at end of video, reset to beginning
+            if(currentFrameNum >= numFrames){        //if at end of video, reset to beginning
                 currentFrameNum = 0;
             }
             else{                                               //else, fetch next frame
                 currentFrameNum++;
-                fetchFrame(tempArray[currentFrameNum])
+                let framePath = videoFolderUrl + ("000" + currentFrameNum).slice(-3) + ".jpg"
+                fetchFrame(framePath)
             }
         }, 1000/fps);
     }, []);
@@ -37,4 +34,3 @@ export default function Flipbook({ videoFolderUrl }) {
         </div>
     )
 }
-    
