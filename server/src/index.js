@@ -12,8 +12,8 @@ fastify.register(require("./video"));
 
 const start = async () => {
   try {
-    const PORT = 3001;
-    await fastify.listen(PORT);
+    const PORT = 8000;
+    await fastify.listen(PORT, '0.0.0.0');
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
